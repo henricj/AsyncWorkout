@@ -82,7 +82,7 @@ namespace AsyncWorkout
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
-            Debug.WriteLine("App.Application_Activated");
+            Debug.WriteLine("App.Application_Activated: preserved " + e.IsApplicationInstancePreserved);
             GlobalServices.ServiceManager.Activated();
         }
 
@@ -90,7 +90,7 @@ namespace AsyncWorkout
         // This code will not execute when the application is closing
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
-            Debug.WriteLine("App.Application_Launching");
+            Debug.WriteLine("App.Application_Deactivated: reason " + e.Reason);
             GlobalServices.ServiceManager.Deactivated();
         }
 
